@@ -1,0 +1,44 @@
+import pygame
+pygame.init()
+screen=pygame.display.set_mode((800,600))
+cloud1=pygame.image.load("C:\Aahana\Game Dev 2\lesson 6\cloud 1.PNG")
+cloud2=pygame.image.load("C:\Aahana\Game Dev 2\lesson 6\cloud 2.PNG")
+bg=pygame.image.load("C:\Aahana\Game Dev 2\lesson 6\sun.PNG")
+cloud1x=50
+cloud2x=700
+cloud1y=300
+cloud2y=300
+bg=pygame.transform.scale(bg,(800,600))
+cloud1=pygame.transform.scale(cloud1,(50,50))
+cloud2=pygame.transform.scale(cloud2,(50,50))
+border=pygame.Rect(395,0,10,800)
+cloud1=pygame.transform.rotate(cloud1,0)
+cloud2=pygame.transform.rotate(cloud2,0)
+
+while True:
+    screen.blit(bg,(0,0))
+    screen.blit(cloud1,(cloud1x,cloud1y))
+    screen.blit(cloud2,(cloud2x,cloud2y))
+    pygame.draw.rect(screen,"black",border)
+    pygame.display.update()
+    for event in pygame.event.get():
+        if event.type==pygame.KEYDOWN:
+            if event.key==pygame.K_UP:
+                cloud1y=cloud1y-15
+            if event.key==pygame.K_DOWN:
+                cloud1y=cloud1y+15
+            if event.key==pygame.K_LEFT:
+                cloud1x=cloud1x-15
+            if event.key==pygame.K_RIGHT:
+                cloud1x=cloud1x+15
+        
+            if event.key==pygame.K_w:
+                cloud2y=cloud2y-15
+            if event.key==pygame.K_a:
+                cloud2y=cloud2y+15
+            if event.key==pygame.K_s:
+                cloud2x=cloud2x-15
+            if event.key==pygame.K_d:
+                cloud2y=cloud2y+15
+                #Make your own game with a choice of background and cartoon character(aka cloud
+    
