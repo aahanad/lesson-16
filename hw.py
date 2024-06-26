@@ -38,6 +38,7 @@ while True:
                     beey=beey+15
                 if event.key==pygame.K_LEFT:
                     beex=beex-15
+                    #Collect pictures for your game
                 if event.key==pygame.K_RIGHT:
                     beex=beex+15
                 
